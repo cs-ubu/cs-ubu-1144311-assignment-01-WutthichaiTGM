@@ -1,4 +1,5 @@
 import numpy as np
+import numpy.linalg as linalg
 import csv
 # read matrix A from 'A.csv'
 a = open('A.csv','r')
@@ -24,8 +25,8 @@ def matmul(A,b):
         for r in range(m):
             for c in range(n):
                 C[(r)][c] = sum([ A[r][j] * b[j][c] for j in range(J) ])
-            return C 
-        return []
+        return C 
         
 # print(C)
-print('C = ',matmul(A,B))
+C = matmul(A,B)
+print('C = ',C)
